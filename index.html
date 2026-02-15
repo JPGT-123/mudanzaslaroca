@@ -125,12 +125,11 @@ footer { background:#111827; color:white; text-align:center; padding:20px; }
 
 <br><br>
 
-<button onclick="calcular()">Calcular presupuesto</button>
-
+<button type="button" onclick="calcular()">Calcular presupuesto</button>
 <p id="resultado"></p>
   </section>
   <script>
-ffunction calcular() {
+function calcular() {
   var servicio = parseFloat(document.getElementById("servicio").value);
   var volumen = parseFloat(document.getElementById("volumen").value);
   var piso = parseFloat(document.getElementById("piso").value);
@@ -143,8 +142,7 @@ ffunction calcular() {
   var maximo = Math.round(total * 1.1);
 
   document.getElementById("resultado").innerHTML =
-    "<strong>Estimación orientativa: " + minimo + "€ - " + maximo + "€</strong><br>El precio final puede variar tras confirmación.";
-}
+    "<strong>Estimación orientativa: " + minimo + "€ - " + maximo + "€</strong><br>El precio final puede variar tras confirmación.";}
   </script>
 <h2>Zona de Trabajo</h2>
 <p>Quinto, Ribera Baja del Ebro y Zaragoza capital.</p>
