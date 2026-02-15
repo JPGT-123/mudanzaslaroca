@@ -85,6 +85,67 @@ footer { background:#111827; color:white; text-align:center; padding:20px; }
 <p>Consúltanos sin compromiso por WhatsApp y te respondemos rápido.</p>
 
   </section>
+  <section>
+<h2>Calcula tu presupuesto aproximado</h2>
+
+<label>Tipo de servicio:</label>
+<select id="servicio">
+  <option value="30">Pequeño porte (electrodoméstico, sofá, etc.)</option>
+  <option value="50">Porte mediano (varios muebles)</option>
+  <option value="80">Mudanza completa</option>
+</select>
+
+<br><br>
+
+<label>Cantidad / volumen:</label>
+<select id="volumen">
+  <option value="1">Poco volumen</option>
+  <option value="1.5">Volumen medio</option>
+  <option value="2">Mucho volumen</option>
+</select>
+
+<br><br>
+
+<label>Piso sin ascensor:</label>
+<select id="piso">
+  <option value="0">Planta baja / con ascensor</option>
+  <option value="10">1º - 2º piso</option>
+  <option value="20">3º - 4º piso</option>
+  <option value="30">5º o más</option>
+</select>
+
+<br><br>
+
+<label>Distancia:</label>
+<select id="distancia">
+  <option value="0">Dentro de Quinto</option>
+  <option value="20">Ribera Baja del Ebro</option>
+  <option value="40">Zaragoza capital</option>
+</select>
+
+<br><br>
+
+<button onclick="calcular()">Calcular presupuesto</button>
+
+<p id="resultado"></p>
+  </section>
+  <script>
+ffunction calcular() {
+  var servicio = parseFloat(document.getElementById("servicio").value);
+  var volumen = parseFloat(document.getElementById("volumen").value);
+  var piso = parseFloat(document.getElementById("piso").value);
+  var distancia = parseFloat(document.getElementById("distancia").value);
+
+  var precioBase = servicio * volumen;
+  var total = precioBase + piso + distancia;
+
+  var minimo = Math.round(total * 0.9);
+  var maximo = Math.round(total * 1.1);
+
+  document.getElementById("resultado").innerHTML =
+    "<strong>Estimación orientativa: " + minimo + "€ - " + maximo + "€</strong><br>El precio final puede variar tras confirmación.";
+}
+  </script>
 <h2>Zona de Trabajo</h2>
 <p>Quinto, Ribera Baja del Ebro y Zaragoza capital.</p>
 </section>
