@@ -30,15 +30,31 @@ footer { background:#111827; color:white; text-align:center; padding:20px; }
 .whatsapp-btn:hover {
   background: #1ebe5d;}
   .resultado-premium {
-  background: linear-gradient(135deg, #2e7d32, #43a047);
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
   color: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  font-size: 20px;
-  font-weight: bold;
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: aparecer 0.5s ease-in-out;
+}
+
+.resultado-premium strong {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 10px;
+}
+  @keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
   
@@ -101,7 +117,7 @@ footer { background:#111827; color:white; text-align:center; padding:20px; }
 <select id="servicio">
   <option value="30">Pequeño porte (electrodoméstico, sofá, etc.)</option>
   <option value="50">Porte mediano (varios muebles)</option>
-  <option value="80">Mudanza completa</option>
+  <option value="120">Mudanza completa</option>
 </select>
 
 <br><br>
@@ -110,7 +126,7 @@ footer { background:#111827; color:white; text-align:center; padding:20px; }
 <select id="volumen">
   <option value="1">Poco volumen</option>
   <option value="1.5">Volumen medio</option>
-  <option value="2">Mucho volumen</option>
+  <option value="3">Mucho volumen</option>
 </select>
 
 <br><br>
@@ -127,9 +143,9 @@ footer { background:#111827; color:white; text-align:center; padding:20px; }
 
 <label>Distancia:</label>
 <select id="distancia">
-  <option value="0">Dentro de Quinto</option>
-  <option value="20">Ribera Baja del Ebro</option>
-  <option value="40">Zaragoza capital</option>
+  <option value="20">Dentro de Quinto</option>
+  <option value="50">Ribera Baja del Ebro</option>
+  <option value="80">Zaragoza capital</option>
 </select>
 
 <br><br>
@@ -150,8 +166,9 @@ function calcular() {
   var minimo = Math.round(total * 0.9);
   var maximo = Math.round(total * 1.1);
 
-  document.getElementById("resultado").innerHTML =
-    "<strong>Estimación orientativa: " + minimo + "€ - " + maximo + "€</strong><br>El precio final puede variar tras confirmación.";}
+  document.getElementById("resultado").innerHTML = "⭐ <strong>" + minimo + "€ - " + maximo + "€</strong>" +
+"<br>✔️ Servicio rápido y garantizado." +
+"<br><small>Presupuesto orientativo. Confirmación final tras valoración.</small>";
   </script>
 <h2>Zona de Trabajo</h2>
 <p>Quinto, Ribera Baja del Ebro y Zaragoza capital.</p>
